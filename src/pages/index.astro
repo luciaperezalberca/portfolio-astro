@@ -1,31 +1,52 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import 
+import LinkedInIcon from '../components/icons/LinkedIn.astro';
+import InstagramIcon from '../components/icons/Instagram.astro';
+import SendEmailIcon from '../components/icons/SendEmail.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout 
+	title="Portfolio de Lucia Perez Alberca - Desarrolladora Web, Diseñadora y Artista Visual"
+	description="Contrata a Lucia para crear tu sitio web completo. Incluido el diseño, la edición de imágenes y programación.">
 	<main>
 		<section class="w-full mx-auto lg:w-[740px] py-44 flex justify-between">
 			<div>
 				<h1 class="text-black text-xl font-bold"> Hola! Soy Lucia. </h1>
 				<h2 class="text-2x1 opacity-80 text-wrap"> Desarrolladora web, Diseñadora y Artista Visual </h2>
-				<ul>
-					<li>
-						<a href="/proyectos"> Ver mis proyectos </a>
-					</li>
-					<li>
-						<a href="https://www.linkedin.com/in/luciaperezalberca/" target="_blank"> 
-							<img src="" alt="">
-							LinkedIn 
-						</a>
-					</li>
-				</ul>
+				<nav class="flex items-center gap-x-3 mt-8">
+					<a 
+						href="/proyectos"
+						class="border bg-black rounded-md text-white flex justify-center px-7 h-12 flex justify-center items-center hover:opacity-70"> Ver mis proyectos 
+					</a>
+					<a 
+        					class="rounded-full flex justify-center items-center gap-x-2 py-3 px-1 hover:scale-110" 
+        					target="_blank"
+						rel="noopener noreferrer"
+        					href="https://www.linkedin.com/in/luciaperezalberca/"> 
+						<LinkedInIcon class="size-8 hover:opacity-50"/>
+					</a>
+					<a 
+        					class="rounded-full flex justify-center items-center gap-x-2 py-3 px-1 hover:scale-110" 
+        					target="_blank"
+						rel="noopener noreferrer"
+        					href="https://www.instagram.com/luciaperezalberca/"> 
+						<InstagramIcon class="size-8 hover:opacity-50"/>	
+					</a>
+					<a 
+        					class="rounded-full flex justify-center items-center gap-x-2 py-3 px-1 hover:scale-110" 
+        					target="_blank"
+						rel="noopener noreferrer"
+        					href="mailto:luciaperezalberca@gmail.com"> 
+						<SendEmailIcon class="size-7 hover:opacity-50"/>
+					</a>
+				</nav>
 			</div>
 			<img 
 				class="w-80 h-80"
 				src="https://img.freepik.com/vector-gratis/espacio-trabajo-disenador-grafico_23-2148117504.jpg?t=st=1713554819~exp=1713558419~hmac=e3e4404c69065eac1d831440ffd43333ba16b703a1bd316791c200b9b3ff0d7e&w=740" 
 				alt="foto de Lucia"
 			> 
-		</section>	
+		</section>
+		<section></section>	
 	</main>
 </Layout>
