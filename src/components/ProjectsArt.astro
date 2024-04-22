@@ -1,27 +1,61 @@
 ---
 const PROJECTSART = [
         {
-                title: 'Project 1',
-                description: 'Lorem ipsum dolor isteate quod? Quasi corrupti inventore totam alias.',
-                link: '#',
-                github: '#',
-                image: 'https://via.placeholder.com/300x200',
-                tags: [ 'HTML', 'CSS', 'JavaScript' ]
+                title: 'Flor Rosa',
+                technique: 'Ilustración Digital',
+                image: '/images/flor-rosa-ilust.webp'
+        },
+        {
+                title: 'Fresias Pastel',
+                technique: 'Pastel al óleo',
+                image: '/images/fresias-pastel.webp'
+        },
+        {
+                title: 'Reino Fungi',
+                technique: 'Pintura Acrílica',
+                image: '/images/reino-fungi-acrilico.webp'
+        },
+        {
+                title: 'Pétalos',
+                technique: 'Pintura Acrílica',
+                image: '/images/petalos-acrilico.webp'
+        },
+        {
+                title: 'Poseidón',
+                technique: 'Pintura Acrílica',
+                image: '/images/poseidon-acrilico.webp'
+        },
+        {
+                title: 'Helados',
+                technique: 'Ilustración Digital',
+                image: '/images/helados-ilust.webp'
+        },
+        {
+                title: 'Células',
+                technique: 'Pintura en Acuarela',
+                image: '/images/celulas-acuarela.webp'
+        },
+        {
+                title: 'Volcán Submarino',
+                technique: 'Pastel al óleo',
+                image: '/images/volcan-submarino-pastel.webp'
+        },
+        {
+                title: 'Felicidad',
+                technique: 'Pastel al óleo',
+                image: '/images/felicidad-pastel.webp'
         },
 ]
 ---
 
 {
-        PROJECTSART.map(({ image, title, description, tags }) => (
-                <article>
-                        <img src={image} alt={title} />
-                        <h3>{title}</h3>
-                        <p>{description}</p>
-                        <ul>
-                                {tags.map(tag => (
-                                        <li>{tag}</li>
-                                ))}
-                        </ul>
-                </article>
+        PROJECTSART.map(({ image, title, technique }) => (
+                <div class="grid grid-col-3">
+                        <div class="flex flex-col justify-center items-center">
+                                <img src={image} alt={title} class="mb-3 rounded-lg shadow-md size-80"/>
+                                <h2 class="font-bold">{title}</h2>
+                                <h3 class="text-sm mb-7">{technique}</h3>
+                        </div>
+                </div>
         ))
 }

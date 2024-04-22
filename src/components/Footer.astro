@@ -1,3 +1,23 @@
-<footer class="py-20">
-        aqui va el footer
+---
+const currentYear = new Date().getFullYear()
+import LinkedInIcon from "./icons/LinkedIn.astro";
+import SendEmailIcon from "./icons/SendEmail.astro";
+import WhatsAppIcon from "./icons/WhatsApp.astro";
+---
+
+<footer class="py-20 mt-10 flex flex-col justify-center items-center">
+        <div>
+                <ul class="flex justify-center items-center gap-3">
+                        <li> <a href="https://www.linkedin.com/in/luciaperezalberca/" target="_blank"> <LinkedInIcon class="size-8 hover:opacity-50 hover:scale-110" /> </a> </li>
+                        <li> <a href="mailto:luciaperezalberca@gmail.com" target="_blank"> <SendEmailIcon class="size-8 hover:opacity-50 hover:scale-110" /> </a> </li>
+                        <li> <a href="https://wa.me/1128859654" target="_blank"> <WhatsAppIcon class="size-8 hover:opacity-50 hover:scale-110" /> </a> </li>
+                </ul>
+        </div>
+        <span class="mt-7">
+                &#169; {currentYear}. Todos los derechos reservados.
+        </span>
+        <span class="font-bold">
+                Lucia Perez Alberca.
+        </span>
+        
 </footer>
