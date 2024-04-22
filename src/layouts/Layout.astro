@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/manrope';
 import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
 	title: string;
@@ -20,10 +21,13 @@ const { description, title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
+
 	<body>
 		<Header />
 		<slot />
+		<Footer />
 	</body>
+
 </html>
 <style is:global>
 	:root {
@@ -32,6 +36,7 @@ const { description, title } = Astro.props;
 
 	html {
 		font-family:'Manrope Variable', system-ui, sans-serif;
+		scroll-behavior: smooth;
 	}
 
 	body {
@@ -41,4 +46,11 @@ const { description, title } = Astro.props;
 		justify-content: center;
 		min-height: 100vh;
 	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+
 </style>

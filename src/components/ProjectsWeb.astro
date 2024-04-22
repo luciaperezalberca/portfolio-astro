@@ -1,0 +1,58 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import Link from "./icons/Link.astro";
+
+const PROJECTSWEB = [
+        {
+                title: 'Zelaya Restaurant',
+                category: 'Desarrollo Web',
+                description: 'Lorem ipsum dolor isteate quod? Quasi corrupti inventore totam alias.',
+                link: 'https://restaurant-zelaya.netlify.app/',
+                github: 'https://github.com/luciaperezalberca/restaurant-zelaya',
+                image: 'https://via.placeholder.com/300x200',
+                tags: [ 'React', 'Firebase', 'CSS' ]
+        },
+        {
+                title: 'Project 1',
+                category: 'Desarrollo Web',
+                description: 'Lorem ipsum dolor isteate quod? Quasi corrupti inventore totam alias.',
+                link: '#',
+                github: '#',
+                image: 'https://via.placeholder.com/300x200',
+                tags: [ 'HTML', 'CSS', 'JavaScript' ]
+        },
+        {
+                title: 'Project 1',
+                category: 'Desarrollo Web',
+                description: 'Lorem ipsum dolor isteate quod? Quasi corrupti inventore totam alias.',
+                link: '#',
+                github: '#',
+                image: 'https://via.placeholder.com/300x200',
+                tags: [ 'HTML', 'CSS', 'JavaScript' ]
+        },
+]
+---
+
+{
+        PROJECTSWEB.map(({ image, title, category , description, tags, github, link }) => (
+                <article class="flex flex-col mb-10 shadow-md p-7 rounded-lg w-80">
+                        <img src={image} alt={title} class="mb-8"/>
+                        <h2>{title}</h2>
+                        <h3 class="font-bold mt-1">{category}</h3>
+                        <p class="text-sm mb-4 mt-4">{description}</p>
+                        <ul class="flex gap-x-1">
+                                {tags.map(tag => (
+                                        <li class="text-xs font-semibold bg-gray-950/20 px-3 py-1 rounded">{tag}</li>
+                                ))}
+                        </ul>
+                        <div class="flex mt-6 justify-end gap-3">
+                                <a href={github} target="_blank">
+                                        <GitHub class="size-8 hover:opacity-50"/>
+                                </a>
+                                <a href={link} target="_blank">
+                                        <Link class="size-8 hover:opacity-50"/>
+                                </a>
+                        </div>
+                </article>
+        ))
+}

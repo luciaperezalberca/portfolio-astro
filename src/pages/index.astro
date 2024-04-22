@@ -7,6 +7,9 @@ import SendEmailIcon from '../components/icons/SendEmail.astro';
 import CodeIcon from '../components/icons/Code.astro';
 import DesignIcon from '../components/icons/Design.astro';
 import ArtIcon from '../components/icons/Art.astro';
+import ProjectsWeb from '../components/ProjectsWeb.astro';
+import ProjectsDesign from  '../components/ProjectsDesign.astro';
+import ProjectsArt from '../components/ProjectsArt.astro';
 ---
 
 <Layout 
@@ -19,7 +22,7 @@ import ArtIcon from '../components/icons/Art.astro';
 				<h2 class="text-md opacity-80 text-wrap mb-4"> Desarrolladora web, Diseñadora y Artista Visual </h2>
 				<nav class="flex items-center gap-x-3 xl:mt-8">
 					<a 
-						href="/proyectos"
+						href="#proyectos"
 						class="border bg-black rounded-md text-white flex justify-center px-5 h-12 flex justify-center items-center hover:opacity-70"> Ver proyectos 
 					</a>
 					<a 
@@ -51,17 +54,26 @@ import ArtIcon from '../components/icons/Art.astro';
 				alt="imagen de Lucia"
 			> 
 		</section>
-		<SectionContainer> 
+		<div class="flex justify-center items-center gap-x-2 text-xl mb-10">
 			<CodeIcon />
 			Desarrollo Web 
-		</SectionContainer>
+		</div>
 		<SectionContainer> 
+			<ProjectsWeb />
+		</SectionContainer>
+		<div class="flex justify-center items-center gap-x-2 text-xl mb-10 mt-10">
 			<DesignIcon />
 			Diseño 
-		</SectionContainer>
+		</div>
 		<SectionContainer> 
+			<ProjectsDesign />
+		</SectionContainer>
+		<div class="flex justify-center items-center gap-x-2 text-xl mb-10 mt-10">
 			<ArtIcon />
-			Arte 
+			Arte
+		</div>
+		<SectionContainer> 
+			<ProjectsArt />
 		</SectionContainer>	
 	</main>
 </Layout>
