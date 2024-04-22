@@ -6,29 +6,29 @@ const PROJECTSWEB = [
         {
                 title: 'Zelaya Restaurant',
                 category: 'Desarrollo Web',
-                description: 'Lorem ipsum dolor isteate quod? Quasi corrupti inventore totam alias.',
+                description: 'Sitio web responsive para restaurant. Incluye filtro por categorías y registro de pedidos con numero de ID único. Control de stock, precios y pedidos a través de base de datos.',
                 link: 'https://restaurant-zelaya.netlify.app/',
                 github: 'https://github.com/luciaperezalberca/restaurant-zelaya',
-                image: 'https://via.placeholder.com/300x200',
-                tags: [ 'React', 'Firebase', 'CSS' ]
+                image: '/images/gast-web-2.jpg',
+                tags: [ 'React.Js', 'Firebase', 'CSS' ]
         },
         {
-                title: 'Project 1',
+                title: 'Feel Good Shoes',
                 category: 'Desarrollo Web',
-                description: 'Lorem ipsum dolor isteate quod? Quasi corrupti inventore totam alias.',
-                link: '#',
-                github: '#',
-                image: 'https://via.placeholder.com/300x200',
+                description: 'Ecommerce. Incluye filtro por categorías, mensajes de confirmación y Dark Mode (según la preferencia almacenada en localStorage, de no hallarse lo hará según el modo de pantalla',
+                link: 'https://feel-good-shoes.netlify.app/',
+                github: 'https://github.com/luciaperezalberca/Ecommerce',
+                image: '/images/shoes-web-2.jpg',
                 tags: [ 'HTML', 'CSS', 'JavaScript' ]
         },
         {
-                title: 'Project 1',
+                title: 'Art Gallery',
                 category: 'Desarrollo Web',
-                description: 'Lorem ipsum dolor isteate quod? Quasi corrupti inventore totam alias.',
-                link: '#',
-                github: '#',
-                image: 'https://via.placeholder.com/300x200',
-                tags: [ 'HTML', 'CSS', 'JavaScript' ]
+                description: 'Sitio web para portfolio con formato galería de arte. Incluye animaciones, filtro por categorías, diferentes secciones y links a redes sociales. 100% responsive.',
+                link: 'https://perez-alberca-portfolio.netlify.app/',
+                github: 'https://github.com/luciaperezalberca/Portfolio-art-gallery',
+                image: '/images/web-art-3.jpg',
+                tags: [ 'HTML', 'CSS', 'SASS' ]
         },
 ]
 ---
@@ -36,9 +36,9 @@ const PROJECTSWEB = [
 {
         PROJECTSWEB.map(({ image, title, category , description, tags, github, link }) => (
                 <article class="flex flex-col mb-10 shadow-md p-7 rounded-lg w-80">
-                        <img src={image} alt={title} class="mb-8"/>
-                        <h2>{title}</h2>
-                        <h3 class="font-bold mt-1">{category}</h3>
+                        <img src={image} alt={title} class="mb-8 rounded-lg"/>
+                        <h3>{category}</h3>
+                        <h2 class="font-bold mt-1">{title}</h2> 
                         <p class="text-sm mb-4 mt-4">{description}</p>
                         <ul class="flex gap-x-1">
                                 {tags.map(tag => (
@@ -47,10 +47,10 @@ const PROJECTSWEB = [
                         </ul>
                         <div class="flex mt-6 justify-end gap-3">
                                 <a href={github} target="_blank">
-                                        <GitHub class="size-8 hover:opacity-50"/>
+                                        <GitHub class="size-8 hover:opacity-50 hover:scale-110"/>
                                 </a>
                                 <a href={link} target="_blank">
-                                        <Link class="size-8 hover:opacity-50"/>
+                                        <Link class="size-8 hover:opacity-50 hover:scale-110"/>
                                 </a>
                         </div>
                 </article>
