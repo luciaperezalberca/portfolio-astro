@@ -31,7 +31,7 @@ const { description, title } = Astro.props;
 </html>
 <style is:global>
 	:root {
-		color-scheme: light dark;	
+		color-scheme: light;	
 	}
 
 	html {
@@ -52,11 +52,5 @@ const { description, title } = Astro.props;
 			scroll-behavior: auto;
 		}
 	}
-
-	@media (prefers-color-scheme: light) {
-        	body {
-          		color: #232323;
-        	}
-      	}
 
 </style>

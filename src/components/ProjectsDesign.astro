@@ -3,14 +3,19 @@ const PROJECTSDESIGN = [
         {
                 title: 'Branding',
                 description: 'Intervención de logo de marca para colección de Primavera. Logo, tarjetas personales del local, banner web, historia para Instagram y extras para publicaciones.',
-                image: '/images/branding-carey.webp',
+                image: '/images/collection-spring.png',
+        },
+        {
+                title: 'New Collection',
+                description: 'Intervención de logo de marca para colección de Primavera. Logo, tarjetas personales del local, banner web, historia para Instagram y extras para publicaciones.',
+                image: '/images/collection-color.png',
         },
 ]
 ---
 
 {
         PROJECTSDESIGN.map(({ image, title, description }) => (
-                <div class="flex flex-col md:flex-row justify-center items-center">
+                <div class="flex flex-col md:flex-row justify-center items-center bg-transparent">
                         <img src={image} alt={title} class="w-96 rounded-lg lg:w-3/6"/>
                         <div class="text-center max-w-96 md:pl-12">
                                 <h3 class="mt-5 mb-2 text-lg font-bold">{title}</h3>

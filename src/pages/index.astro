@@ -22,8 +22,10 @@ import ProjectsArt from '../components/ProjectsArt.astro';
 				<h2 class="text-md opacity-80 text-wrap mb-4"> Desarrolladora web, Diseñadora y Artista Visual </h2>
 				<nav class="flex items-center gap-x-3 xl:mt-8">
 					<a 
-						href="#proyectos"
-						class="border bg-black rounded-md text-white flex justify-center px-5 h-12 flex justify-center items-center hover:opacity-70"> Ver proyectos 
+						href="/public/files/LuciaPerezAlberca-resume.pdf" 
+						download="LuciaPerezAlberca-resume.pdf" 
+						class="shadow-md shadow-gray-950 bg-black/80 text-white hover:bg-gray-950/25 hover:scale-105 px-4 py-2 rounded-lg"> 
+						Descargar CV 
 					</a>
 					<a 
         					class="rounded-full flex justify-center items-center gap-x-2 px-1 hover:scale-110" 
@@ -54,21 +56,21 @@ import ProjectsArt from '../components/ProjectsArt.astro';
 				alt="imagen de Lucia"
 			> 
 		</section>
-		<div class="flex justify-center items-center gap-x-2 text-xl mb-10">
+		<div class="flex justify-center items-center gap-x-2 text-xl mb-5 mt-10">
 			<CodeIcon />
 			Desarrollo Web 
 		</div>
 		<SectionContainer> 
 			<ProjectsWeb />
 		</SectionContainer>
-		<div class="flex justify-center items-center gap-x-2 text-xl mb-10 mt-10">
+		<div class="flex justify-center items-center gap-x-2 text-xl mb-10 mt-20">
 			<DesignIcon />
 			Diseño 
 		</div>
 		<SectionContainer> 
-			<ProjectsDesign />
+			<ProjectsDesign/>
 		</SectionContainer>
-		<div class="flex justify-center items-center gap-x-2 text-xl mb-10 mt-20">
+		<div class="flex justify-center items-center gap-x-2 text-xl mb-10 mt-32">
 			<ArtIcon />
 			Arte
 		</div>
