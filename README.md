@@ -2,6 +2,8 @@
 
 A simple portfolio built with Astro and Tailwind CSS.
 
+<img src="images/screenshot-web.webp">
+
 ## URL
 
 https://luciaperezalberca.netlify.app/
@@ -10,7 +12,6 @@ https://luciaperezalberca.netlify.app/
 
 -   Built with Astro and Tailwind CSS
 -   Reusable Components
--   Back to top button
 -   Download file button
 -   Responsive design
 
