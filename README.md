@@ -2,7 +2,7 @@
 
 A simple portfolio built with Astro and Tailwind CSS.
 
-<img src="images/screenshot-web.webp">
+<img src="./public/images/screen-web.webp" alt="screenshot de la web versión desktop">
 
 ## URL
 
