@@ -11,6 +11,7 @@ import ProjectsWeb from '../components/ProjectsWeb.astro';
 import ProjectsDesign from  '../components/ProjectsDesign.astro';
 import ProjectsArt from '../components/ProjectsArt.astro';
 import About from '../components/About.astro';
+import DownloadIcon from '../components/icons/Download.astro';
 ---
 
 <Layout 
@@ -25,8 +26,8 @@ import About from '../components/About.astro';
 					<a 
 						href="/files/LuciaPerezAlberca-resume.pdf" 
 						download="LuciaPerezAlberca-resume.pdf" 
-						class="shadow-md shadow-gray-950 bg-black/80 text-white text-sm tracking-wide text-nowrap hover:bg-gray-950/70 hover:scale-105 px-4 py-2 rounded-lg"> 
-						Descargar CV 
+						class="shadow-md shadow-gray-950 bg-black/80 text-white text-sm tracking-wide hover:bg-gray-950/70 hover:scale-105 px-3 py-2 rounded-lg flex justify-center items-center gap-1"> 
+						<DownloadIcon class="size-7"/>CV 
 					</a>
 					<a 
         					class="rounded-full flex justify-center items-center gap-x-2 px-1 hover:scale-110" 
