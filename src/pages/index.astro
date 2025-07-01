@@ -2,14 +2,12 @@
 import Layout from '../layouts/Layout.astro';
 import SectionContainer from '../components/SectionContainer.astro';
 import LinkedInIcon from '../components/icons/LinkedIn.astro';
-import InstagramIcon from '../components/icons/Instagram.astro';
+import WhatsAppIcon from '../components/icons/WhatsApp.astro';
 import SendEmailIcon from '../components/icons/SendEmail.astro';
 import DownloadIcon from '../components/icons/Download.astro';
-import CodeIcon from '../components/icons/Code.astro';
 import DesignIcon from '../components/icons/Design.astro';
 import ArtIcon from '../components/icons/Art.astro';
 import ProjectsWeb from '../components/ProjectsWeb.astro';
-import ProjectsDesign from  '../components/ProjectsDesign.astro';
 import ProjectsArt from '../components/ProjectsArt.astro';
 import About from '../components/About.astro';
 ---
@@ -18,67 +16,88 @@ import About from '../components/About.astro';
 	title="Portfolio de Lucia Perez Alberca - Desarrolladora Web, Diseñadora y Artista Visual"
 	description="Contrata a Lucia para crear tu sitio web completo. Incluido el diseño, la edición de imágenes y programación.">
 	<main>
-		<section class="bg-gray-400/10 flex flex-col md:flex-row w-full p-10 justify-center items-center gap-20 md:gap-6 xl:gap-x-24">
-			<div class="m-10">
-				<h1 class="text-black text-3xl font-bold mb-1"> Hola! Soy Lucia. </h1>
-				<h2 class="text-md text-wrap mb-4 text-gray-600 tracking-wide"> Desarrolladora web, Diseñadora y Artista Visual </h2>
-				<nav class="flex items-center gap-x-3 xl:mt-8">
-					<a 
-						href="/files/LuciaPerezAlberca-resume.pdf" 
-						download="LuciaPerezAlberca-resume.pdf" 
-						class="shadow-md shadow-gray-950 bg-black/80 text-white text-sm tracking-wide hover:bg-gray-950/70 hover:scale-105 px-3 py-2 rounded-lg flex justify-center items-center gap-1"> 
-						<DownloadIcon class="size-7"/>CV 
-					</a>
-					<a 
-        					class="rounded-full flex justify-center items-center gap-x-2 px-1 hover:scale-110" 
-        					target="_blank"
-						rel="noopener noreferrer"
-        					href="https://www.linkedin.com/in/luciaperezalberca/"> 
-						<LinkedInIcon class="size-8 hover:opacity-50"/>
-					</a>
-					<a 
-        					class="rounded-full flex justify-center items-center gap-x-2 px-1 hover:scale-110" 
-        					target="_blank"
-						rel="noopener noreferrer"
-        					href="https://www.instagram.com/luciaperezalberca/"> 
-						<InstagramIcon class="size-8 hover:opacity-50"/>	
-					</a>
-					<a 
-        					class="rounded-full flex justify-center items-center gap-x-2 px-1 hover:scale-110" 
-        					target="_blank"
-						rel="noopener noreferrer"
-        					href="mailto:luciaperezalberca@gmail.com"> 
-						<SendEmailIcon class="size-7 hover:opacity-50"/>
-					</a>
-				</nav>
-			</div>
-			<img 
-				class="w-full h-auto sm:w-3/4 sm:rounded-lg md:w-80 lg:w-1/3 xl:w-2/5 mb-20"
-				src="/images/ilustracion-home.webp" 
-				alt="imagen de Lucia"
-			> 
+		<section class="relative bg-cover bg-center bg-no-repeat w-full py-28 md:py-40 px-10 flex items-center" style="background-image: url('/images/ilustracion-home.webp');">
+  
+  			<div class="absolute inset-0 bg-black/40 backdrop-blur-sm z-0"></div>
+  			<div class="relative z-10 max-w-5xl w-full text-white text-center md:text-start flex flex-col md:px-40 gap-6 md:items-start items-center">
+    				<h1 class="text-4xl font-bold">¡Hola! Soy Lucia.</h1>
+    				<h2 class="text-lg tracking-wide">Desarrolladora web, Diseñadora y Artista Visual</h2>
+
+    				<div class="flex flex-wrap items-center gap-4">
+      					<a href="/files/LuciaPerezAlberca-resume.pdf" download="LuciaPerezAlberca-resume.pdf" class="shadow bg-white text-black text-sm font-medium hover:bg-gray-200 hover:scale-105 px-4 py-2 rounded-lg flex items-center gap-2 transition">
+        					<DownloadIcon class="size-6" />CV
+      					</a>
+
+      					<a href="https://www.linkedin.com/in/luciaperezalberca/" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition">
+        					<LinkedInIcon class="size-8 text-white" />
+      					</a>
+
+      					<a href="https://wa.me/+5491128859654" target="_blank" rel="noopener noreferrer" class="hover:opacity-70 transition">
+        					<WhatsAppIcon class="size-8 text-white" />
+      					</a>
+
+      					<a href="mailto:luciaperezalberca@gmail.com" class="hover:opacity-70 transition">
+        					<SendEmailIcon class="size-7 text-white" />
+      					</a>
+    				</div>
+  			</div>
 		</section>
+
+
+		
 		<div class="flex justify-center items-center gap-x-2 text-2xl mt-10" id="proyectos">
-			<CodeIcon />
-			Desarrollo Web 
 		</div>
 		<SectionContainer> 
 			<ProjectsWeb />
 		</SectionContainer>
+
 		<div class="flex justify-center items-center gap-x-2 text-2xl mt-20">
 			<DesignIcon />
-			Diseño 
+			<span> Rediseño UX/UI - RG Ramos Generales </span>
 		</div>
-		<SectionContainer> 
-			<ProjectsDesign/>
-		</SectionContainer>
-		<div class="flex justify-center items-center gap-x-2 text-2xl mt-10 mb-2">
+
+		<div class="max-w-3xl mx-auto mt-6 px-4 text-center text-gray-700 leading-relaxed">
+  			<p> 
+				Este proyecto consistió en el rediseño completo del sitio web de una marca de gran trayectoria, 
+    				con el objetivo de modernizar su imagen digital, mejorar la experiencia del usuario y optimizar la navegación en distintos dispositivos. 
+			</p>
+  			<p class="mt-4">
+    				A través de una auditoría visual y funcional, detecté varios puntos críticos que impactaban negativamente en la usabilidad del sitio.
+    				El resultado fue una propuesta más clara, estética y alineada con los valores de la marca.
+  			</p>
+		</div>
+
+		<div class="w-full max-w-2xl mx-auto my-12 px-4">
+  			<div class="rounded-2xl overflow-hidden shadow-lg border border-gray-200 bg-white">
+    				<iframe 
+      					src="/files/ramosgenerales.pdf" 
+      					width="100%" 
+      					height="400"
+      					style="border: none;"
+					loading="lazy"
+      					allowfullscreen
+    				></iframe>
+  			</div>
+  			<div class="text-center mt-6">
+    				<a 
+      					href="/files/ramosgenerales.pdf" 
+      					target="_blank" 
+      					rel="noopener noreferrer"
+      					class="btn border-none shadow-md bg-gray-200/70 hover:bg-gray-300/70"
+    				>
+      					Ver en pantalla completa
+    				</a>
+  			</div>
+		</div>
+		
+		<div class="flex justify-center items-center gap-x-2 text-2xl mt-20 mb-5">
 			<ArtIcon />
 			Arte
 		</div>
 		<SectionContainer> 
 			<ProjectsArt />
 		</SectionContainer>
+
 		<About />	
 	</main>
 </Layout>
