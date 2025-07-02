@@ -8,8 +8,8 @@ import DownloadIcon from '../components/icons/Download.astro';
 import DesignIcon from '../components/icons/Design.astro';
 import ArtIcon from '../components/icons/Art.astro';
 import ProjectsWeb from '../components/ProjectsWeb.astro';
-import ProjectsArt from '../components/ProjectsArt.astro';
 import About from '../components/About.astro';
+import CarouselArt from '../components/CarouselArt.astro';
 ---
 
 <Layout 
@@ -18,7 +18,7 @@ import About from '../components/About.astro';
 	<main>
 		<section class="relative bg-cover bg-center bg-no-repeat w-full py-28 md:py-40 px-10 flex items-center" style="background-image: url('/images/ilustracion-home.webp');">
   
-  			<div class="absolute inset-0 bg-black/40 backdrop-blur-sm z-0"></div>
+  			<div class="absolute inset-0 bg-black/30 backdrop-blur-sm z-0"></div>
   			<div class="relative z-10 max-w-5xl w-full text-white text-center md:text-start flex flex-col md:px-40 gap-6 md:items-start items-center">
     				<h1 class="text-4xl font-bold">¡Hola! Soy Lucia.</h1>
     				<h2 class="text-lg tracking-wide">Desarrolladora web, Diseñadora y Artista Visual</h2>
@@ -51,9 +51,9 @@ import About from '../components/About.astro';
 			<ProjectsWeb />
 		</SectionContainer>
 
-		<div class="flex justify-center items-center gap-x-2 text-2xl mt-20">
-			<DesignIcon />
-			<span> Rediseño UX/UI - RG Ramos Generales </span>
+		<div class="flex flex-row justify-center text-2xl mt-20 text-center">
+			
+			<p class="flex flex-row px-10 gap-x-2"> <DesignIcon /> Rediseño UX/UI - RG Ramos Generales </p>
 		</div>
 
 		<div class="max-w-3xl mx-auto mt-6 px-4 text-center text-gray-700 leading-relaxed">
@@ -75,7 +75,6 @@ import About from '../components/About.astro';
       					height="400"
       					style="border: none;"
 					loading="lazy"
-      					allowfullscreen
     				></iframe>
   			</div>
   			<div class="text-center mt-6">
@@ -89,15 +88,15 @@ import About from '../components/About.astro';
     				</a>
   			</div>
 		</div>
-		
-		<div class="flex justify-center items-center gap-x-2 text-2xl mt-20 mb-5">
-			<ArtIcon />
-			Arte
-		</div>
-		<SectionContainer> 
-			<ProjectsArt />
-		</SectionContainer>
 
+		<div class="mb-20">
+			<div class="flex justify-center items-center gap-x-2 text-2xl mt-20 mb-5">
+				<ArtIcon />
+				Arte
+			</div>
+			<CarouselArt></CarouselArt>
+		</div>
+		
 		<About />	
 	</main>
 </Layout>

@@ -1,0 +1,159 @@
+---
+const PROJECTSART = [
+  {
+    title: 'Flor Rosa',
+    technique: 'Ilustración Digital',
+    image: '/images/flor-rosa-ilust.webp',
+    item: 'item1'
+  },
+  {
+    title: 'Fresias Pastel',
+    technique: 'Pastel al óleo',
+    image: '/images/fresias-pastel.webp',
+    item: 'item2'
+  },
+  {
+    title: 'Reino Fungi',
+    technique: 'Pintura Acrílica',
+    image: '/images/reino-fungi-acrilico.webp',
+    item: 'item3'
+  },
+  {
+    title: 'Pétalos',
+    technique: 'Pintura Acrílica',
+    image: '/images/petalos-acrilico.webp',
+    item: 'item4'
+  },
+  {
+    title: 'Poseidón',
+    technique: 'Pintura Acrílica',
+    image: '/images/poseidon-acrilico.webp',
+    item: 'item5'
+  },
+  {
+    title: 'Células',
+    technique: 'Pintura en Acuarela',
+    image: '/images/celulas-acuarela.webp',
+    item: 'item6'
+  },
+];
+---
+
+<div class="w-full mx-auto my-12">
+  <div class="relative overflow-hidden shadow-lg bg-transparent">
+    <div id="carouselart" class="flex transition-transform duration-1000">
+      {PROJECTSART.map((art, i) => (
+        <div
+          class="relative flex-shrink-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 h-80 cursor-pointer group"
+          data-index={i}
+        >
+          <img
+            src={art.image}
+            alt={art.title}
+            class="w-full h-full object-cover"
+            data-title={art.title}
+            data-technique={art.technique}
+          />
+          <div
+            id={`info-${i}`}
+            class="absolute inset-0 z-10 flex flex-col items-center justify-center text-center px-3 bg-black/40 backdrop-blur-xs text-white opacity-0 transition-all duration-1000 ease-in-out pointer-events-none"
+          >
+            <h3 class="text-lg font-semibold">{art.title}</h3>
+            <p class="text-md">{art.technique}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <button id="prev" class="absolute flex items-center justify-center top-1/2 left-2 -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white rounded-full p-2 w-10 h-10 hover:bg-opacity-70 z-20 text-2xl">‹</button>
+    <button id="next" class="absolute flex items-center justify-center top-1/2 right-2 -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white rounded-full p-2 w-10 h-10 hover:bg-opacity-70 z-20 text-2xl"> › </button>
+  
+  </div>
+</div>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.getElementById('carouselart');
+    const prevBtn = document.getElementById('prev');
+    const nextBtn = document.getElementById('next');
+    const items = carousel.children;
+    let index = 0;
+
+    const getItemsPerView = () => {
+      if (window.innerWidth >= 1024) return 4;
+      if (window.innerWidth >= 768) return 3;
+      if (window.innerWidth >= 640) return 2;
+      return 1;
+    };
+
+    const updateCarousel = () => {
+      const perView = getItemsPerView();
+      const movePercent = (100 / perView) * index;
+      carousel.style.transform = `translateX(-${movePercent}%)`;
+    };
+
+    const goNext = () => {
+      const perView = getItemsPerView();
+      const maxIndex = items.length - perView;
+      index = index >= maxIndex ? 0 : index + 1;
+      updateCarousel();
+    };
+
+    const goPrev = () => {
+      const perView = getItemsPerView();
+      const maxIndex = items.length - perView;
+      index = index <= 0 ? maxIndex : index - 1;
+      updateCarousel();
+    };
+
+    prevBtn.addEventListener('click', goPrev);
+    nextBtn.addEventListener('click', goNext);
+    window.addEventListener('resize', () => {
+      const perView = getItemsPerView();
+      const maxIndex = items.length - perView;
+      if (index > maxIndex) index = 0;
+      updateCarousel();
+    });
+    updateCarousel();
+
+    let autoplay = setInterval(goNext, 10000);
+    [prevBtn, nextBtn].forEach(btn => {
+      btn.addEventListener('click', () => {
+        clearInterval(autoplay);
+        autoplay = setInterval(goNext, 10000);
+      });
+    });
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipe = touchStartX - touchEndX;
+      if (swipe > 50) goNext();
+      if (swipe < -50) goPrev();
+    });
+
+    [...carousel.children].forEach((slide, idx) => {
+      slide.addEventListener('click', () => {
+        [...carousel.children].forEach((s, i) => {
+          const overlay = document.getElementById(`info-${i}`);
+          if (overlay) overlay.classList.add('opacity-0');
+        });
+
+        const overlay = document.getElementById(`info-${idx}`);
+        if (overlay) {
+          overlay.classList.remove('opacity-0');
+          clearTimeout(overlay.hideTimeout);
+          overlay.hideTimeout = setTimeout(() => {
+            overlay.classList.add('opacity-0');
+          }, 10000);
+        }
+      });
+    });
+  });
+</script>
