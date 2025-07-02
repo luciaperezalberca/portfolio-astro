@@ -2,7 +2,7 @@
 import '@fontsource-variable/manrope';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import BackToTop from '../components/BackToTop.astro';
+import ContactWApp from '../components/ContactWApp.astro';
 
 interface Props {
 	title: string;
@@ -24,9 +24,10 @@ const { description, title } = Astro.props;
 	</head>
 
 	<body>
+		<div id="top" class="absolute -top-20"></div>
 		<Header />
 		<slot />
-		<BackToTop />
+		<ContactWApp />
 		<Footer />
 	</body>
 

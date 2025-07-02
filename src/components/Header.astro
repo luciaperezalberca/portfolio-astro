@@ -1,16 +1,70 @@
-<header class="sticky top-0 z-50 bg-[#f9f6ef]">
-        <nav class="text-md flex flex-col sm:flex-row justify-around items-center gap-5 opacity-80 mt-5 md:mt-7 sm:mb-10 lg:mb-0">
-                <a href="/">
-                        <img
-                                class="w-auto h-12 md:h-14 lg:h-16 lg:mb-8" 
-                                src="/images/logo-black.png" 
-                                alt="imagen de logo"
-                        />
-                </a>
-                <div class="flex gap-x-5 lg:gap-x-10 text-md mb-5 sm:mt-4 sm:mb-2 lg:mt-0">
-                        <a href="/#proyectos" class="hover:opacity-50 hover:scale-110"> Proyectos </a>
-                        <a href="/#sobre-mi" class="hover:opacity-50 hover:scale-110"> Sobre mí </a>
-                        <a href="https://wa.me/+5491128859654" target="_blank" rel="noopener noreferrer" class="hover:opacity-50 hover:scale-110"> Contacto </a>
-                </div>
-        </nav>
+<header class="sticky top-0 z-50 bg-[#f9f6ef] border-b">
+  <nav class="relative flex items-center justify-between px-4 py-3 sm:py-2 sm:px-8">
+
+    <!-- MENU HAMBURGUESA -->
+    <button id="menu-toggle" class="sm:hidden flex flex-col gap-1 z-50">
+      <span class="w-6 h-0.5 bg-black/40"></span>
+      <span class="w-6 h-0.5 bg-black/40"></span>
+      <span class="w-6 h-0.5 bg-black/40"></span>
+    </button>
+
+    <!-- LOGO -->
+    <a href="/" class="absolute left-1/2 transform -translate-x-1/2 sm:static sm:translate-x-0">
+      <img src="/images/logo-black.png" alt="Logo" class="h-9 md:h-11 lg:h-12" />
+    </a>
+
+    <!-- MENU DESKTOP -->
+    <div class="hidden sm:flex gap-6 lg:gap-8 text-sm lg:text-md uppercase tracking-wider">
+      <a href="/#diseno" class="hover:opacity-60 hover:scale-105 transition"> Diseño </a>
+      <a href="/#desarrollo" class="hover:opacity-60 hover:scale-105 transition"> Desarrollo Web </a>
+      <a href="/#arte" class="hover:opacity-60 hover:scale-105 transition"> Arte </a>
+      <a href="/#origen" class="hover:opacity-60 hover:scale-105 transition"> Origen </a>
+      <a href="/#contacto" class="hover:opacity-60 hover:scale-105 transition"> Contacto </a>
+    </div>
+  </nav>
+
+  <!-- OVERLAY DE MENU MOBILE -->
+  <div id="menu-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-30 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+
+  <!-- MENU MOBILE -->
+  <div id="mobile-menu" class="fixed top-0 left-0 h-full w-3/4 max-w-xs bg-[#f9f6ef] shadow-lg transform -translate-x-full transition-transform duration-300 z-40 p-6 flex flex-col gap-6 text-md uppercase">
+    <button id="menu-close" class="self-end text-3xl text-black/40 font-semibold">&times;</button>
+    <a href="/" class="hover:opacity-60 hover:scale-105 transition"> Inicio </a>
+    <a href="/#diseno" class="hover:opacity-60 hover:scale-105 transition"> Diseño </a>
+    <a href="/#desarrollo" class="hover:opacity-60 hover:scale-105 transition"> Desarrollo Web </a>
+    <a href="/#arte" class="hover:opacity-60 hover:scale-105 transition"> Arte </a>
+    <a href="/#origen" class="hover:opacity-60 hover:scale-105 transition"> Origen </a>
+    <a href="/#contacto" class="hover:opacity-60 hover:scale-105 transition"> Contacto </a>
+  </div>
 </header>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('menu-toggle');
+    const closeBtn = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const overlay = document.getElementById('menu-overlay');
+
+    const openMenu = () => {
+      mobileMenu.style.transform = 'translateX(0)';
+      toggleBtn.classList.add('hidden');
+      overlay.classList.remove('opacity-0', 'pointer-events-none');
+      overlay.classList.add('opacity-100');
+    };
+
+    const closeMenu = () => {
+      mobileMenu.style.transform = 'translateX(-100%)';
+      toggleBtn.classList.remove('hidden');
+      overlay.classList.remove('opacity-100');
+      overlay.classList.add('opacity-0', 'pointer-events-none');
+    };
+
+    toggleBtn.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', closeMenu);
+
+    [...mobileMenu.querySelectorAll('a')].forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+  });
+</script>

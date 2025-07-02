@@ -5,9 +5,19 @@ import SendEmailIcon from "./icons/SendEmail.astro";
 import WhatsAppIcon from "./icons/WhatsApp.astro";
 import InstagramIcon from "./icons/Instagram.astro";
 import GitHubIcon from "./icons/GitHub.astro";
+import ArrowIcon from './icons/Arrow.astro';
 ---
 
-<footer class="py-20 mt-10 flex flex-col justify-center items-center">
+<footer class="py-20 flex flex-col justify-center items-center">
+        <div class="mb-5">
+                <a 
+                        href="#top" 
+                        class="border px-2 py-1 bg-gray-200/80 rounded-xl flex justify-center items-center gap-1 text-black text-sm hover:text-gray-500 hover:scale-110"
+                        aria-label="Volver arriba"
+                >
+                        Volver arriba <ArrowIcon/>
+                </a>
+        </div>
         <div>
                 <ul class="flex justify-center items-center gap-3">
                         <li> 
@@ -16,7 +26,7 @@ import GitHubIcon from "./icons/GitHub.astro";
                                         target="_blank"
                                         rel="noopener noreferrer"
                                 > 
-                                        <SendEmailIcon class="size-8 hover:opacity-50 hover:scale-110" /> 
+                                        <SendEmailIcon class="size-8 hover:text-red-800 hover:scale-110" /> 
                                 </a> 
                         </li>
                         <li> 
@@ -25,7 +35,7 @@ import GitHubIcon from "./icons/GitHub.astro";
                                         target="_blank"
                                         rel="noopener noreferrer"
                                 > 
-                                        <WhatsAppIcon class="size-8 hover:opacity-50 hover:scale-110" /> 
+                                        <WhatsAppIcon class="size-8 hover:text-green-700 hover:scale-110" /> 
                                 </a> 
                         </li>
                         <li> 
@@ -34,7 +44,7 @@ import GitHubIcon from "./icons/GitHub.astro";
                                         target="_blank"
                                         rel="noopener noreferrer"
                                 > 
-                                        <LinkedInIcon class="size-8 hover:opacity-50 hover:scale-110" /> 
+                                        <LinkedInIcon class="size-8 hover:text-blue-700 hover:scale-110" /> 
                                 </a> 
                         </li>
                         <li> 
@@ -43,7 +53,7 @@ import GitHubIcon from "./icons/GitHub.astro";
                                         target="_blank"
                                         rel="noopener noreferrer"
                                 > 
-                                        <GitHubIcon class="size-8 hover:opacity-50 hover:scale-110" /> 
+                                        <GitHubIcon class="size-8 hover:text-gray-400 hover:scale-110" /> 
                                 </a> 
                         </li>
                         <li> 
@@ -52,7 +62,7 @@ import GitHubIcon from "./icons/GitHub.astro";
                                         target="_blank"
                                         rel="noopener noreferrer"
                                 > 
-                                        <InstagramIcon class="size-8 hover:opacity-50 hover:scale-110" /> 
+                                        <InstagramIcon class="size-8 hover:text-pink-700 hover:scale-110" /> 
                                 </a> 
                         </li>
                 </ul>

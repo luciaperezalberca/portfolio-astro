@@ -1,0 +1,56 @@
+---
+import LinkedInIcon from "./icons/LinkedIn.astro";
+import WhatsAppIcon from "./icons/WhatsApp.astro";
+import DownloadIcon from "./icons/Download.astro";
+---
+
+<section id="contacto" class="w-full max-w-5xl mx-auto my-28 mt-40 px-6 text-center flex flex-col items-center gap-10">
+        <img 
+                src="/images/contact.png" 
+                alt="Foto de Lucia Perez Alberca" 
+                class="w-60 h-60 object-cover rounded-full shadow-lg border-4 border-white" 
+        />
+
+        <div class="max-w-xl">
+                <h2 class="text-2xl sm:text-3xl font-semibold mb-4">¿Charlamos?</h2>
+                <p class="text-gray-700 text-base leading-relaxed whitespace-pre-line">
+                        {`Si tenés un proyecto, una propuesta o querés sumar talento a tu equipo,\nestoy a un mensaje de distancia.\nEscribime y conocé cómo puedo ayudarte a llevarlo adelante.`}
+                </p>
+        </div>
+
+        <div class="flex flex-wrap justify-center items-center gap-4 mt-2 w-full max-w-md">
+                <a 
+                        href="/files/LuciaPerezAlberca-resume.pdf" 
+                        download="LuciaPerezAlberca-resume.pdf" 
+                        class="flex justify-center items-center w-12 h-12 sm:w-auto sm:h-auto sm:px-4 sm:py-2 rounded-full sm:rounded-lg shadow bg-gray-200 text-gray-800 text-sm font-medium hover:bg-gray-300 hover:scale-105 transition"
+                        aria-label="Descargar CV"
+                >
+                        <span class="sm:hidden text-base font-normal">CV</span>
+                        <span class="hidden sm:flex items-center gap-1">
+                                <DownloadIcon class="size-6" /> Descargar CV
+                        </span>
+                </a>
+
+                <a 
+                        href="https://wa.me/5491128859654" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="flex justify-center gap-1 items-center w-12 h-12 sm:w-auto sm:h-auto sm:px-4 sm:py-2 rounded-full sm:rounded-lg shadow bg-green-100 text-green-700 text-sm font-medium hover:bg-green-200 hover:scale-105 transition"
+                        aria-label="WhatsApp"
+                >
+                        <WhatsAppIcon class="size-6 sm:size-6" />
+                        <span class="sr-only sm:not-sr-only ml-2"> Escribime </span>
+                </a>
+
+                <a 
+                        href="https://www.linkedin.com/in/luciaperezalberca" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        class="flex justify-center gap-1 items-center w-12 h-12 sm:w-auto sm:h-auto sm:px-4 sm:py-2 rounded-full sm:rounded-lg shadow bg-blue-100 text-blue-700 text-sm font-medium hover:bg-blue-200 hover:scale-105 transition"
+                        aria-label="LinkedIn"
+                >
+                        <LinkedInIcon class="size-6 sm:size-6" />
+                        <span class="sr-only sm:not-sr-only ml-2">LinkedIn</span>
+                </a>
+        </div>
+</section>
