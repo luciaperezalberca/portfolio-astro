@@ -22,21 +22,16 @@ import Contact from '../components/Contact.astro';
     				<h2 class="mt-3 text-md sm:text-lg tracking-wide">Diseñadora, Desarrolladora Web y Artista Visual</h2>
 
     				<div class="flex flex-wrap items-center gap-4">
-      					<a href="/#proyectos" class="border border-white text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300">
+      					<a href="/#diseno" class="scroll-mt-24 border border-white text-white text-sm font-medium px-5 py-2 rounded-full hover:bg-white hover:text-black transition-all duration-300">
         					Conocé mis proyectos
       					</a>
     				</div>
   			</div>
 		</section>
 
-
-		
-		<div class="flex justify-center items-center gap-x-2 text-2xl mt-10" id="proyectos">
-		</div>
-
 		<ProjectRG />
 
-		<div class="flex flex-row justify-center text-2xl text-center" id="diseno">
+		<div class="flex flex-row justify-center text-2xl text-center scroll-mt-24" id="diseno">
 			<h2 class="flex flex-row px-10 gap-x-2"> <DesignIcon /> Rediseño UX/UI - RG Ramos Generales </h2>
 		</div>
 
@@ -72,12 +67,13 @@ import Contact from '../components/Contact.astro';
     				</a>
   			</div>
 		</div>
+		<div id="desarrollo" class="scroll-mt-24">
+			<SectionContainer> 
+				<ProjectsWeb />
+			</SectionContainer>
+		</div>
 
-		<SectionContainer> 
-			<ProjectsWeb />
-		</SectionContainer>
-
-		<div class="mb-48 mt-40" id="arte">
+		<div class="mb-48 mt-40 scroll-mt-24" id="arte">
 			<div class="flex justify-center items-center gap-x-2 text-2xl mt-20 mb-5">
 				<ArtIcon />
 				Arte
