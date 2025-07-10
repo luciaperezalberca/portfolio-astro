@@ -119,14 +119,6 @@ const PROJECTSART = [
     });
     updateCarousel();
 
-    let autoplay = setInterval(goNext, 10000);
-    [prevBtn, nextBtn].forEach(btn => {
-      btn.addEventListener('click', () => {
-        clearInterval(autoplay);
-        autoplay = setInterval(goNext, 10000);
-      });
-    });
-
     let touchStartX = 0;
     let touchEndX = 0;
 

@@ -13,6 +13,15 @@ const PROJECTSWEB = [
                 tags: [ 'React.Js', 'Firebase', 'CSS' ]
         },
         {
+                title: 'Estudio Decoración',
+                category: 'Desarrollo Web',
+                description: 'Sitio Web para estudio de Diseño de Interiores. Desarrollado con foco en la estética, jerarquía visual clara y experiencia de usuario adaptable a distintos dispositivos.',
+                link: 'https://estudiodecoracion.netlify.app/',
+                github: 'https://github.com/luciaperezalberca/estudio-decoracion',
+                image: '/images/deco-web-1.png',
+                tags: [ 'Astro', 'TailwindCSS', 'DaisyUI' ]
+        },
+        {
                 title: 'Gogo Andreu',
                 category: 'Desarrollo Web',
                 description: 'Landing page conmemorativa para reconocido artista. Incluye carousel con la trayectoria de todas sus obras, integración de videos de YouTube y redes sociales. 100% responsive.',
@@ -54,7 +63,9 @@ const PROJECTSWEB = [
 {
         PROJECTSWEB.map(({ image, title, category , description, tags, github, link }) => (
                 <article class="flex flex-col mt-28 shadow-lg px-7 py-4 rounded-lg w-80 border border-gray-400/30" id="desarrollo">
-                        <img src={image} alt={title} class="mb-8 rounded-lg"/>
+                        <a href={link} target="_blank" rel="noopener noreferrer">
+                                <img src={image} alt={title} class="mb-8 rounded-lg"/>
+                        </a>
                         <h3>{category}</h3>
                         <h2 class="font-bold mt-1">{title}</h2> 
                         <p class="text-sm mb-4 mt-4">{description}</p>
