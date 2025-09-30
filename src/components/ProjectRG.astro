@@ -1,0 +1,305 @@
+---
+const PROJECTRG = [
+  {
+    title: 'Portada proyecto',
+    image: '/images/1-rg.webp',
+    item: 'item1'
+  },
+  {
+    title: 'Historia de la Marca',
+    image: '/images/2-rg.png',
+    item: 'item2'
+  },
+  {
+    title: 'Resumen del Proyecto',
+    image: '/images/3-rg.png',
+    item: 'item3'
+  },
+  {
+    title: 'El Desafío',
+    image: '/images/4-rg.png',
+    item: 'item4'
+  },
+  {
+    title: 'Auditoría y análisis UX',
+    image: '/images/5-rg.png',
+    item: 'item5'
+  },
+  {
+    title: 'Auditoría y análisis UX',
+    image: '/images/6-rg.png',
+    item: 'item6'
+  },
+  {
+    title: 'Auditoría y análisis UX',
+    image: '/images/7-rg.png',
+    item: 'item7'
+  },
+  {
+    title: 'Auditoría y análisis UX',
+    image: '/images/8-rg.png',
+    item: 'item8'
+  },
+  {
+    title: 'Auditoría y análisis UX',
+    image: '/images/9-rg.png',
+    item: 'item9'
+  },
+  {
+    title: 'Auditoría y análisis UX',
+    image: '/images/10-rg.png',
+    item: 'item10'
+  },
+  {
+    title: 'Propuesta de Solución',
+    image: '/images/11-rg.png',
+    item: 'item11'
+  },
+  {
+    title: 'Moodboard',
+    image: '/images/12-rg.png',
+    item: 'item12'
+  },
+  {
+    title: 'Propuesta UI',
+    image: '/images/13-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Propuesta UI',
+    image: '/images/14-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Propuesta UI',
+    image: '/images/15-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Propuesta UI',
+    image: '/images/16-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Propuesta UI',
+    image: '/images/17-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Propuesta UI',
+    image: '/images/18-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Propuesta UI',
+    image: '/images/19-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Propuesta UI',
+    image: '/images/20-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Propuesta UI',
+    image: '/images/21-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Propuesta UI',
+    image: '/images/22-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'User Interface Kit',
+    image: '/images/23-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'User Interface Kit',
+    image: '/images/24-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Diseño Final Mobile',
+    image: '/images/25-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Diseño Final Mobile',
+    image: '/images/26-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Diseño Final Mobile',
+    image: '/images/27-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Diseño Final Desktop',
+    image: '/images/28-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Diseño Final Desktop',
+    image: '/images/29-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Índice',
+    image: '/images/30-rg.png',
+    item: 'item13'
+  },
+  {
+    title: 'Cierre proyecto',
+    image: '/images/31-rg.png',
+    item: 'item13'
+  }
+];
+---
+
+<div class="w-full mx-auto my-12">
+  <div class="relative overflow-hidden shadow-lg bg-transparent">
+    <div id="carouselrg" class="flex transition-transform duration-1000">
+      {PROJECTRG.map((rg, i) => (
+        <div
+          class="relative flex-shrink-0 basis-full sm:basis-1/1 md:basis-1/2 lg:basis-1/3 h-100 cursor-pointer group"
+          data-index={i}
+        >
+          <img
+            src={rg.image}
+            alt={rg.title}
+            class="w-full h-full object-cover"
+            data-title={rg.title}
+          />
+        </div>
+      ))}
+    </div>
+
+        <button id="prevRG" class="absolute flex items-center justify-center top-1/2 left-2 -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white rounded-full p-2 w-10 h-10 hover:bg-opacity-70 z-20 text-2xl">‹</button>
+    <button id="nextRG" class="absolute flex items-center justify-center top-1/2 right-2 -translate-y-1/2 bg-gray-700 bg-opacity-50 text-white rounded-full p-2 w-10 h-10 hover:bg-opacity-70 z-20 text-2xl"> › </button>
+  
+  </div>
+</div>
+
+<div id="imageModal" class="hidden fixed inset-0 z-50 bg-gray-200 bg-opacity-90 flex items-center justify-center p-4 
+            opacity-0 transition-opacity duration-300 ease-in-out" 
+            aria-modal="true" role="dialog">
+    <div class="relative max-w-4xl w-full max-h-full bg-transparent p-4 rounded-lg">
+        <button id="closeModal" class="absolute top-0 right-0 m-4 text-black text-3xl font-bold p-1 leading-none hover:text-gray-300 transition duration-300" aria-label="Cerrar">
+            &times;
+        </button>
+        
+        <div class="flex flex-col items-center justify-center">
+            <img id="modalImage" src="" alt="Imagen ampliada" class="w-full h-auto object-contain max-h-[80vh]" />
+        </div>
+    </div>
+</div>
+
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.getElementById('carouselrg');
+    const prevBtn = document.getElementById('prevRG');
+    const nextBtn = document.getElementById('nextRG');
+    const items = carousel.children;
+    let index = 0;
+
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const closeModalBtn = document.getElementById('closeModal');
+
+    const getItemsPerView = () => {
+      if (window.innerWidth >= 1024) return 3; 
+      if (window.innerWidth >= 768) return 2;  
+      return 1; 
+    };
+
+    const updateCarousel = () => {
+      const perView = getItemsPerView();
+      const movePercent = (100 / perView) * index;
+      carousel.style.transform = `translateX(-${movePercent}%)`;
+    };
+
+    const goNext = () => {
+      const perView = getItemsPerView();
+      const maxIndex = items.length - perView; 
+      index = index >= maxIndex ? 0 : index + 1;
+      updateCarousel();
+    };
+
+    const goPrev = () => {
+      const perView = getItemsPerView();
+      const maxIndex = items.length - perView;
+      index = index <= 0 ? maxIndex : index - 1;
+      updateCarousel();
+    };
+
+    prevBtn.addEventListener('click', goPrev);
+    nextBtn.addEventListener('click', goNext);
+    
+    window.addEventListener('resize', () => {
+      const perView = getItemsPerView();
+      const maxIndex = items.length - perView;
+      if (index > maxIndex) index = 0;
+      updateCarousel();
+    });
+    
+    updateCarousel();
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    });
+
+    carousel.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const swipe = touchStartX - touchEndX;
+      if (swipe > 50) goNext(); 
+      if (swipe < -50) goPrev(); 
+    });
+
+    [...carousel.children].forEach((slide) => {
+      slide.addEventListener('click', () => {
+        const imgElement = slide.querySelector('img');
+        const title = imgElement.getAttribute('data-title');
+        const imageSrc = imgElement.getAttribute('src');
+
+        modalImage.src = imageSrc;
+        
+        modal.classList.remove('hidden');
+        requestAnimationFrame(() => {
+            modal.classList.add('opacity-100');
+            modal.classList.remove('opacity-0');
+        });
+        document.body.style.overflow = 'hidden'; // Bloquea el scroll del fondo
+      });
+    });
+
+    const closeModal = () => {
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0');
+        
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restaura el scroll
+        }, 300);
+    };
+    
+    closeModalBtn.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            closeModal();
+        }
+    });
+
+    // Cerrar el modal al presionar la tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+            closeModal();
+        }
+    });
+  });
+</script>
